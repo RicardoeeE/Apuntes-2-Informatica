@@ -1,4 +1,3 @@
-```markdown
 # Apuntes de Sentencias de Control Básicas en Python
 
 ## 1. Sentencia `if`
@@ -26,11 +25,16 @@ else:
     print("x es negativo")
 ```
 
+### Casos de uso:
+- Validar entradas de usuario.
+- Tomar decisiones basadas en valores.
+- Manejar condiciones múltiples.
+
 ---
 
 ## 2. Sentencia `while`
 
-La sentencia `while` permite ejecutar un bloque de código repetidamente mientras una condición sea verdadera.
+El bucle `while` permite ejecutar repetidamente un bloque de código mientras una condición sea verdadera.
 
 ### Sintaxis:
 ```python
@@ -46,8 +50,8 @@ while i <= 5:
     i += 1
 ```
 
-### Uso de `break`:
-`break` permite terminar la ejecución de un bucle antes de que la condición sea falsa.
+### Uso del `break`:
+El `break` permite salir de un bucle antes de que la condición se vuelva falsa.
 ```python
 i = 1
 while True:
@@ -56,6 +60,11 @@ while True:
     if i > 5:
         break
 ```
+
+### Casos de uso:
+- Ejecutar tareas repetitivas.
+- Búsqueda de elementos o condiciones.
+- Simulaciones.
 
 ---
 
@@ -76,6 +85,7 @@ for letra in "Python":
 ```
 
 ### Uso del `break`:
+El `break` interrumpe el bucle cuando se cumple una condición.
 ```python
 for i in range(10):
     if i == 5:
@@ -83,20 +93,24 @@ for i in range(10):
     print(i)
 ```
 
+### Casos de uso:
+- Iterar sobre colecciones (listas, cadenas, etc.).
+- Manipulación de datos en estructuras iterables.
+- Recorrer rangos de valores.
+
 ---
 
-## 4. El `in range`
+## 4. Función `range`
 
-La función `range()` genera una secuencia de números. Es muy útil para controlar bucles, especialmente con `for`.
+La función `range()` genera una secuencia de números, útil para controlar bucles `for` en Python.
 
 ### Sintaxis:
 ```python
 range(start, stop, step)
 ```
-
-- `start`: el valor inicial de la secuencia (opcional, por defecto es 0).
-- `stop`: el valor donde se detiene (no incluye este valor).
-- `step`: el incremento (opcional, por defecto es 1).
+- `start`: valor inicial (opcional, por defecto es 0).
+- `stop`: valor final (no incluido).
+- `step`: incremento (opcional, por defecto es 1).
 
 ### Ejemplos:
 
@@ -112,18 +126,22 @@ for i in range(2, 10, 2):  # Genera números del 2 al 8 en saltos de 2
     print(i)
 ```
 
-### Uso del `in` con `range`:
-El `in` puede usarse para verificar si un número está en el rango generado.
+### Verificar si un número está en el rango:
 ```python
 print(3 in range(1, 5))  # True porque 3 está en el rango 1-4
 print(5 in range(1, 5))  # False porque 5 no está en el rango 1-4
 ```
 
+### Casos de uso:
+- Control de bucles en rangos numéricos.
+- Generar secuencias para manipular listas.
+- Crear bucles con saltos específicos.
+
 ---
 
-## 5. Sentencias Iterativas Anidadas
+## 5. Bucles Anidados
 
-Es posible anidar bucles dentro de otros bucles. Esto se utiliza cuando es necesario iterar sobre múltiples niveles de una estructura de datos o resolver problemas complejos.
+Es posible anidar un bucle dentro de otro para manejar estructuras más complejas.
 
 ### Sintaxis:
 ```python
@@ -132,10 +150,10 @@ for variable1 in secuencia1:
         # código a ejecutar en cada iteración anidada
 ```
 
-### Ejemplo:
+### Ejemplo de bucles `for` anidados:
 ```python
-for i in range(3):  # Bucle externo
-    for j in range(2):  # Bucle interno
+for i in range(3):
+    for j in range(2):
         print(f"i: {i}, j: {j}")
 ```
 Salida:
@@ -149,7 +167,7 @@ i: 2, j: 1
 ```
 
 ### Uso del `break` en bucles anidados:
-El `break` en un bucle anidado solo interrumpe el bucle en el que está ubicado.
+El `break` solo interrumpe el bucle en el que está ubicado.
 ```python
 for i in range(3):
     for j in range(2):
@@ -158,7 +176,7 @@ for i in range(3):
         print(f"i: {i}, j: {j}")
 ```
 
-### Ejemplo de anidación con `while` y `for`:
+### Ejemplo con `while` y `for`:
 ```python
 i = 0
 while i < 3:
@@ -167,34 +185,39 @@ while i < 3:
     i += 1
 ```
 
+### Casos de uso:
+- Trabajar con estructuras de datos en varias dimensiones (matrices, listas anidadas).
+- Procesar varias colecciones en paralelo.
+- Resolver problemas que requieren múltiples iteraciones anidadas.
+
 ---
 
-## 6. Casos de uso comunes de `range` y bucles anidados
+## 6. Casos de Uso Comunes de `range` y Bucles Anidados
 
-1. **Generar una matriz**:
-   ```python
-   matriz = []
-   for i in range(3):
-       fila = []
-       for j in range(3):
-           fila.append(i * j)
-       matriz.append(fila)
-   print(matriz)
-   ```
-   Salida: `[[0, 0, 0], [0, 1, 2], [0, 2, 4]]`
+### Generar una matriz:
+```python
+matriz = []
+for i in range(3):
+    fila = []
+    for j in range(3):
+        fila.append(i * j)
+    matriz.append(fila)
+print(matriz)
+```
+Salida: `[[0, 0, 0], [0, 1, 2], [0, 2, 4]]`
 
-2. **Iterar sobre listas anidadas**:
-   ```python
-   lista_anidada = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-   for sublista in lista_anidada:
-       for elemento en sublista:
-           print(elemento)
-   ```
+### Iterar sobre listas anidadas:
+```python
+lista_anidada = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+for sublista in lista_anidada:
+    for elemento en sublista:
+        print(elemento)
+```
 
 ---
 
 ## Conclusión
 
-Las sentencias de control en Python son herramientas fundamentales para la lógica de los programas. El uso adecuado de `if`, `while`, `for`, y `break` permite manejar una gran variedad de situaciones. Además, la función `range()` es esencial para manejar secuencias de números en bucles, y las sentencias anidadas permiten resolver problemas más complejos.
+Las sentencias de control en Python (`if`, `while`, `for`) permiten manejar la lógica y el flujo de ejecución de los programas. El uso adecuado de estas, junto con funciones como `range()`, posibilita la manipulación eficiente de datos y la solución de problemas más complejos a través de bucles anidados y control de flujo.
 ```
 
