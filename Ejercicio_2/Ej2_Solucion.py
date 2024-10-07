@@ -12,6 +12,7 @@ def mostrar_escalera():
     for i in range(1, escalones + 1):
         for j in range(1, i + 1):
             print(j, end=' ')
+            
         print()  # Salto de línea después de cada escalón
 
 # Llamamos a la función
