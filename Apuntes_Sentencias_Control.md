@@ -219,5 +219,14 @@ for sublista in lista_anidada:
 ## Conclusión
 
 Las sentencias de control en Python (`if`, `while`, `for`) permiten manejar la lógica y el flujo de ejecución de los programas. El uso adecuado de estas, junto con funciones como `range()`, posibilita la manipulación eficiente de datos y la solución de problemas más complejos a través de bucles anidados y control de flujo.
-```
+
+| **Sentencia**   | **¿Qué hace?**                                     | **¿Cuándo usar?**                                                  |
+|-----------------|----------------------------------------------------|--------------------------------------------------------------------|
+| `if`            | Evalúa una condición y ejecuta un bloque de código. | Para decisiones condicionales (si algo es verdadero o falso).      |
+| `while`         | Repite un bloque de código mientras una condición es verdadera. | Cuando necesitas repetir algo indefinidamente hasta que cambie la condición. |
+| `for`           | Itera sobre una secuencia (listas, cadenas, etc.).  | Para recorrer colecciones o repetir una tarea un número específico de veces. |
+| `range()`       | Genera una secuencia de números.                    | Para controlar bucles con un rango de valores.                     |
+| `break`         | Interrumpe un bucle antes de que termine.           | Para salir de bucles en condiciones específicas.                   |
+| Bucles anidados | Un bucle dentro de otro bucle.                      | Para trabajar con estructuras complejas (matrices, listas anidadas).|
+
 
